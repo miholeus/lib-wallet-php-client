@@ -164,7 +164,7 @@ class Paysera_WalletApi_OAuth_Consumer
     {
         if (!empty($params['code']) || !empty($params['error'])) {
             $currentState = $this->getState();
-            $givenState = !empty($params['state']) ? $params['state'] : '';
+            $givenState = !empty($params['state']) ? $params['state'] : null;
             if ($currentState !== $givenState) {
                 throw new Paysera_WalletApi_Exception_OAuthException(
                     'Invalid state parameter passed in OAuth authentication',
